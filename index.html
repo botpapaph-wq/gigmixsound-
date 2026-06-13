@@ -1,689 +1,699 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GigMixSound – Mastering Studio Wädenswil</title>
-    <meta name="description" content="Analoges Mixing &amp; Mastering in Wädenswil ZH. 30 Jahre Erfahrung. Tracks einsenden – analog gemeistert zurückbekommen. Warm, lebendig, echt.">
-    <meta name="keywords" content="Tonstudio, Mastering, Mixing, Analog, Vintage Sound, Wädenswil, Schweiz, Remote Mastering, Rockabilly, Schlager, Volksmusik">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark:       #0D0805;
-            --bg-card:       #1A1008;
-            --bg-alt:        #120C06;
-            --swiss-red:     #C8102E;
-            --swiss-red-dk:  #9A0B22;
-            --gold:          #C4942A;
-            --gold-light:    #D4A84A;
-            --cream:         #F0E4C4;
-            --cream-muted:   #C8B890;
-            --text:          #E8D9B0;
-            --muted:         #907860;
-            --green:         #3A6040;
-            --border:        rgba(196,148,42,0.18);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GigMixSound Studio Wädenswil – professionelles Audio Mastering, Recording und Musikproduktion. 30+ Jahre Erfahrung. Mastering ab CHF 75.–">
+  <title>GigMixSound Studio – Mastering & Recording Wädenswil</title>
+  <style>
+    :root {
+      --gold: #e8c96e;
+      --gold-dark: #c9a84c;
+      --bg: #0d0d0d;
+      --bg2: #141414;
+      --bg3: #1a1a1a;
+      --text: #d4d4d4;
+      --text-muted: #888;
+      --border: #2a2a2a;
+    }
 
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            background: var(--bg-dark);
-            color: var(--text);
-            font-family: 'Source Sans 3', sans-serif;
-            font-weight: 300;
-            line-height: 1.7;
-        }
+    html { scroll-behavior: smooth; }
 
-        /* ── ALPINE BAR ── */
-        .alpine-bar {
-            height: 3px;
-            background: linear-gradient(90deg, var(--green) 0%, var(--swiss-red) 50%, var(--gold) 100%);
-        }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        /* ── NAV ── */
-        nav {
-            position: fixed; top: 3px; left: 0; right: 0; z-index: 100;
-            background: rgba(13,8,5,0.93);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 2.5rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.35rem; color: var(--gold);
-            text-decoration: none; letter-spacing: 0.04em;
-        }
-        .nav-logo .red { color: var(--swiss-red); }
-        .nav-links { display:flex; gap:2rem; list-style:none; }
-        .nav-links a {
-            color: var(--cream-muted); text-decoration:none;
-            font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--gold); }
-        .swiss-cross {
-            width:22px; height:22px; background: var(--swiss-red);
-            border-radius:2px; position:relative; flex-shrink:0;
-        }
-        .swiss-cross::before, .swiss-cross::after {
-            content:''; position:absolute; background:white;
-        }
-        .swiss-cross::before { width:38%; height:78%; top:11%; left:31%; }
-        .swiss-cross::after  { width:78%; height:38%; top:31%; left:11%; }
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
 
-        /* ── HERO ── */
-        .hero {
-            min-height: 100vh;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            text-align: center;
-            position: relative; overflow: hidden;
-            padding: 7rem 2rem 0;
-            background-image: url('pics/revox-front.jpg');
-            background-size: cover;
-            background-position: center 30%;
-        }
-        .hero::before {
-            content:''; position:absolute; inset:0;
-            background: linear-gradient(to bottom,
-                rgba(13,8,5,0.90) 0%,
-                rgba(13,8,5,0.82) 40%,
-                rgba(13,8,5,0.93) 100%);
-            pointer-events:none;
-        }
-        .mountains {
-            position:absolute; bottom:0; left:0; right:0;
-            width:100%; height:55%; pointer-events:none;
-        }
-        .hero-content { position:relative; z-index:2; max-width:780px; }
-        .eyebrow {
-            font-size: 0.75rem; letter-spacing: 0.32em; text-transform: uppercase;
-            color: var(--swiss-red); margin-bottom: 1.4rem;
-            display: flex; align-items: center; gap: 0.9rem; justify-content: center;
-        }
-        .eyebrow::before, .eyebrow::after {
-            content:''; width:40px; height:1px; background: var(--swiss-red);
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.6rem, 6vw, 5rem);
-            line-height: 1.1; color: var(--cream); margin-bottom: 0.25em;
-        }
-        h1 em { color: var(--gold); font-style: italic; }
-        .hero-sub {
-            font-size: 1.1rem; color: var(--cream-muted);
-            margin: 1.5rem auto 2.5rem; max-width: 500px;
-        }
-        .hero-cta { display:inline-flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
-        .btn {
-            padding: 0.9rem 2.2rem;
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
-            text-decoration: none; cursor:pointer; border:none; transition: all 0.3s;
-            display:inline-block;
-        }
-        .btn-red  { background: var(--swiss-red); color: white; }
-        .btn-red:hover { background: var(--swiss-red-dk); }
-        .btn-gold { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
-        .btn-gold:hover { background: var(--gold); color: var(--bg-dark); }
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
 
-        .hero-stats {
-            position:relative; z-index:2;
-            display:flex; gap:3rem; padding: 2.5rem 0 3rem;
-            justify-content:center; flex-wrap:wrap;
-        }
-        .stat { text-align:center; }
-        .stat-n {
-            font-family:'Playfair Display',serif;
-            font-size:2rem; color:var(--gold); display:block;
-        }
-        .stat-l {
-            font-size:0.72rem; letter-spacing:0.15em;
-            text-transform:uppercase; color:var(--muted);
-        }
+    .nav-logo span { color: var(--text-muted); font-weight: 400; font-size: 0.85rem; display: block; letter-spacing: 0.02em; }
 
-        /* ── SECTIONS ── */
-        section { padding: 5rem 2rem; }
-        .inner { max-width:1100px; margin:0 auto; }
-        .sec-hd { text-align:center; margin-bottom:3.5rem; }
-        .sec-eye {
-            font-size:0.72rem; letter-spacing:0.3em; text-transform:uppercase;
-            color:var(--swiss-red); margin-bottom:0.7rem;
-        }
-        h2 {
-            font-family:'Playfair Display',serif;
-            font-size:clamp(1.8rem,3vw,2.7rem); color:var(--cream); line-height:1.2;
-        }
-        h2 em { color:var(--gold); font-style:italic; }
-        .rule {
-            width:60px; height:2px; background:var(--swiss-red);
-            margin:1.4rem auto 0;
-        }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
 
-        /* ── ÜBER ── */
-        .ueber { background: var(--bg-alt); }
-        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-        .ueber p { color:var(--text); margin-bottom:1.1rem; font-size:1.02rem; }
-        .pullquote {
-            border-left:3px solid var(--swiss-red); padding-left:1.4rem;
-            margin:1.8rem 0; font-family:'Playfair Display',serif;
-            font-style:italic; font-size:1.15rem; color:var(--cream);
-        }
-        .tape-box {
-            background:var(--bg-card); border:1px solid var(--border); padding:2rem;
-        }
-        .reel {
-            width:80px; height:80px; border:3px solid var(--gold);
-            border-radius:50%; margin:0 auto 0.8rem;
-            display:flex; align-items:center; justify-content:center;
-        }
-        .reel::after {
-            content:''; width:22px; height:22px;
-            background:var(--gold); border-radius:50%;
-        }
-        .reel-label {
-            text-align:center; font-family:'Playfair Display',serif;
-            color:var(--gold); font-size:0.9rem; letter-spacing:0.08em;
-        }
-        .tape-stats {
-            display:grid; grid-template-columns:1fr 1fr; gap:1rem;
-            margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--border);
-            text-align:center;
-        }
-        .tape-stat-n { color:var(--gold); font-family:'Playfair Display',serif; font-size:1.3rem; }
-        .tape-stat-l { color:var(--muted); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--text); transition: all 0.3s; }
 
-        /* ── LEISTUNGEN ── */
-        .four-col { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
-        .card {
-            background:var(--bg-card); border:1px solid var(--border);
-            padding:2rem 1.5rem; transition:border-color 0.3s, transform 0.3s;
-        }
-        .card:hover { border-color:var(--swiss-red); transform:translateY(-4px); }
-        .card-icon { font-size:2rem; margin-bottom:0.9rem; display:block; }
-        .card h3 {
-            font-family:'Playfair Display',serif; color:var(--gold);
-            margin-bottom:0.7rem; font-size:1.2rem;
-        }
-        .card p { color:var(--muted); font-size:0.93rem; }
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 60px;
+      background:
+        radial-gradient(ellipse at 50% 60%, rgba(232,201,110,0.06) 0%, transparent 70%),
+        linear-gradient(180deg, #0d0d0d 0%, #111 100%);
+      position: relative;
+      overflow: hidden;
+    }
 
-        /* ── PREISE ── */
-        .preise { background: var(--bg-alt); }
-        .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
-        .pcard {
-            background:var(--bg-card); border:1px solid var(--border);
-            padding:2.5rem 2rem; text-align:center; transition:border-color 0.3s;
-            position:relative;
-        }
-        .pcard:hover { border-color:var(--gold); }
-        .pcard.hot { border-color:var(--swiss-red); }
-        .pcard.hot::before {
-            content:'BELIEBT'; position:absolute; top:-1px; right:1.5rem;
-            background:var(--swiss-red); color:white;
-            font-size:0.62rem; letter-spacing:0.2em; padding:0.3rem 0.8rem;
-        }
-        .pname { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:0.9rem; }
-        .pamount { font-family:'Playfair Display',serif; font-size:2.5rem; color:var(--cream); }
-        .pamount span { font-size:1rem; color:var(--muted); }
-        .pdesc { margin-top:0.9rem; color:var(--muted); font-size:0.88rem; }
+    #home::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.015) 2px,
+        rgba(255,255,255,0.015) 4px
+      );
+      pointer-events: none;
+    }
 
-        /* ── EQUIPMENT ── */
-        .equip-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
-        .egroup { background:var(--bg-card); border:1px solid var(--border); padding:1.5rem; }
-        .egroup h3 {
-            font-family:'Playfair Display',serif; color:var(--gold);
-            margin-bottom:1rem; padding-bottom:0.6rem; border-bottom:1px solid var(--border);
-        }
-        .egroup ul { list-style:none; }
-        .egroup li {
-            color:var(--muted); font-size:0.88rem;
-            padding:0.28rem 0 0.28rem 1rem; position:relative;
-        }
-        .egroup li::before {
-            content:'▸'; position:absolute; left:0;
-            color:var(--swiss-red); font-size:0.68rem; top:0.42rem;
-        }
+    .hero-content { position: relative; max-width: 780px; }
 
-        /* ── REFERENZ ── */
-        .ref-section { background: var(--bg-alt); }
-        .ref-card {
-            background:var(--bg-card); border:1px solid var(--border);
-            padding:2.5rem; max-width:800px; margin:0 auto;
-        }
-        .ref-card blockquote {
-            font-family:'Playfair Display',serif; font-style:italic;
-            font-size:1.12rem; color:var(--cream); margin-bottom:1.5rem; line-height:1.8;
-        }
-        .ref-meta { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-        .ref-name { color:var(--gold); font-weight:600; }
-        .ref-sub { color:var(--muted); font-size:0.83rem; }
-        .sp-links { display:flex; gap:0.5rem; flex-wrap:wrap; }
-        .sp { background:#1DB954; color:white; padding:0.28rem 0.75rem; font-size:0.73rem; text-decoration:none; border-radius:20px; transition:opacity 0.3s; }
-        .sp:hover { opacity:0.82; }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
 
-        /* ── KONTAKT ── */
-        .kontakt-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
-        .kinfo h3 { font-family:'Playfair Display',serif; color:var(--gold); margin-bottom:1.5rem; }
-        .krow { display:flex; gap:0.8rem; margin-bottom:0.95rem; align-items:flex-start; }
-        .kicon { color:var(--swiss-red); min-width:1.5rem; padding-top:0.1rem; }
-        .ktxt { color:var(--text); font-size:0.93rem; }
-        .ktxt a { color:var(--gold); text-decoration:none; }
-        .ktxt a:hover { text-decoration:underline; }
-        .social-row { display:flex; gap:0.6rem; margin-top:1.5rem; flex-wrap:wrap; }
-        .soc {
-            color:var(--muted); font-size:0.82rem; text-decoration:none;
-            border:1px solid var(--border); padding:0.38rem 0.8rem; transition:all 0.3s;
-        }
-        .soc:hover { color:var(--gold); border-color:var(--gold); }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
 
-        .form { display:flex; flex-direction:column; gap:1rem; }
-        .fg { display:flex; flex-direction:column; gap:0.38rem; }
-        .fg label {
-            font-size:0.72rem; letter-spacing:0.15em;
-            text-transform:uppercase; color:var(--muted);
-        }
-        .fg input, .fg textarea {
-            background:var(--bg-card); border:1px solid var(--border);
-            color:var(--text); padding:0.8rem 1rem;
-            font-family:'Source Sans 3',sans-serif; font-size:0.93rem;
-            transition:border-color 0.3s; outline:none; width:100%;
-        }
-        .fg input:focus, .fg textarea:focus { border-color:var(--gold); }
-        .fg textarea { height:120px; resize:vertical; }
-        .form-note { color:var(--muted); font-size:0.78rem; margin-top:0.5rem; }
+    h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
 
-        /* ── FOOTER ── */
-        footer {
-            background:#080503; border-top:1px solid var(--border);
-            padding:2rem; text-align:center;
-        }
-        .f-logo { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--gold); margin-bottom:0.4rem; }
-        .f-sub  { color:var(--muted); font-size:0.83rem; }
-        .f-ch   { display:inline-flex; align-items:center; gap:0.45rem; color:var(--swiss-red); font-size:0.78rem; margin-top:0.5rem; }
-        .f-links { margin-top:0.9rem; color:var(--muted); font-size:0.73rem; }
-        .f-links a { color:var(--muted); text-decoration:none; margin:0 0.5rem; }
-        .f-links a:hover { color:var(--gold); }
+    .hero-tagline {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
 
-        /* ── RESPONSIVE ── */
-        @media(max-width:900px) {
-            .four-col { grid-template-columns:1fr 1fr; }
-        }
-        @media(max-width:680px) {
-            .nav-links { display:none; }
-            .two-col, .kontakt-grid { grid-template-columns:1fr; }
-            .three-col, .equip-grid { grid-template-columns:1fr; }
-            .hero-stats { gap:1.5rem; }
-            .four-col { grid-template-columns:1fr; }
-        }
-        @media(max-width:600px) {
-            .foto-strip { grid-template-columns:1fr !important; }
-            .foto-strip img { height:200px !important; }
-        }
-    </style>
+    .hero-cta {
+      display: inline-flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #0d0d0d;
+    }
+
+    .btn-primary:hover { background: var(--gold-dark); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-outline:hover { background: rgba(232,201,110,0.1); }
+
+    /* ── SECTIONS ── */
+    section { padding: 90px 24px; }
+    section:nth-child(even) { background: var(--bg2); }
+
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: #fff;
+      margin-bottom: 48px;
+      line-height: 1.3;
+    }
+
+    h2 span { color: var(--gold); }
+
+    /* ── LEISTUNGEN ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      padding: 28px 24px;
+      border-radius: 2px;
+    }
+
+    .service-card h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .service-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px; }
+
+    .price {
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .price span { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; }
+
+    /* ── EQUIPMENT ── */
+    .equipment-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .eq-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+    }
+
+    .eq-icon {
+      color: var(--gold);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .eq-item strong { color: #fff; display: block; margin-bottom: 2px; font-size: 0.95rem; }
+    .eq-item span { color: var(--text-muted); font-size: 0.85rem; }
+
+    /* ── ÜBER UNS ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text p { color: var(--text-muted); margin-bottom: 16px; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      border-radius: 2px;
+    }
+
+    .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--gold); display: block; }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── KONTAKT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info h3 { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+
+    .contact-detail {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+
+    .contact-detail .icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-detail a { color: var(--text); text-decoration: none; }
+    .contact-detail a:hover { color: var(--gold); }
+    .contact-detail .label { font-size: 0.8rem; color: var(--text-muted); display: block; }
+
+    .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; margin-top: 8px; font-size: 0.9rem; }
+    .hours-grid .day { color: var(--text-muted); }
+    .hours-grid .time { color: var(--text); }
+
+    /* ── FORMULAR ── */
+    form { display: flex; flex-direction: column; gap: 16px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    input, textarea, select {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      border-radius: 2px;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    textarea { min-height: 130px; resize: vertical; }
+
+    select option { background: var(--bg3); }
+
+    .form-success {
+      display: none;
+      background: rgba(63,185,80,0.1);
+      border: 1px solid #3fb950;
+      color: #3fb950;
+      padding: 16px;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080808;
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-inner { max-width: 1000px; margin: 0 auto; }
+
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+    .footer-links a:hover { color: var(--gold); }
+
+    footer p { color: #444; font-size: 0.82rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--bg); padding: 20px 24px; border-bottom: 1px solid var(--border); gap: 16px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .about-stats { grid-template-columns: 1fr 1fr; }
+
+      .hours-grid { grid-template-columns: auto 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 60px 20px; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="alpine-bar"></div>
-
 <!-- NAV -->
 <nav>
-    <a href="#" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;">
-        <svg viewBox="0 0 220 38" xmlns="http://www.w3.org/2000/svg" height="38" style="display:block;">
-            <!-- Tape Reel body -->
-            <circle cx="19" cy="19" r="17" fill="#150E08"/>
-            <circle cx="19" cy="19" r="17" fill="none" stroke="#C4942A" stroke-width="1.5"/>
-            <!-- 3 portholes -->
-            <circle cx="19" cy="8.5"  r="4.2" fill="#0D0805"/>
-            <circle cx="27.7" cy="23" r="4.2" fill="#0D0805"/>
-            <circle cx="10.3" cy="23" r="4.2" fill="#0D0805"/>
-            <!-- Inner accent ring -->
-            <circle cx="19" cy="19" r="13.5" fill="none" stroke="#C4942A" stroke-width="0.4" opacity="0.3"/>
-            <!-- Hub -->
-            <circle cx="19" cy="19" r="5.8" fill="#C4942A"/>
-            <!-- Center hole -->
-            <circle cx="19" cy="19" r="2.4" fill="#0D0805"/>
-            <!-- Tape ribbon to wordmark -->
-            <path d="M36,19 Q40,14 44,19" fill="none" stroke="#C4942A" stroke-width="1.5" opacity="0.55"/>
-            <!-- Wordmark -->
-            <text font-family="'Playfair Display', Georgia, serif" font-size="15.5" font-weight="400">
-                <tspan x="46" y="22" fill="#F0E4C4">Gig</tspan><tspan fill="#C8102E">Mix</tspan><tspan fill="#F0E4C4">Sound</tspan>
-            </text>
-            <!-- Studio tagline -->
-            <text x="46" y="33" font-family="'Source Sans 3', Arial, sans-serif" font-size="5.5" fill="#C4942A" letter-spacing="3.5">ANALOG STUDIO · CH</text>
-        </svg>
-    </a>
-    <ul class="nav-links">
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#preise">Preise</a></li>
-        <li><a href="#equipment">Equipment</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-    <div class="swiss-cross" title="Made in Switzerland"></div>
+  <a class="nav-logo" href="#home">
+    GigMixSound
+    <span>Studio Wädenswil</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#equipment">Equipment</a></li>
+    <li><a href="#ueber">Über uns</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-
-<!-- Alpine Mountain Silhouette -->
-    <svg class="mountains" viewBox="0 0 1440 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <linearGradient id="mG1" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#3A6040" stop-opacity="0.35"/>
-                <stop offset="100%" stop-color="#0D0805" stop-opacity="1"/>
-            </linearGradient>
-            <linearGradient id="mG2" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#1A1008" stop-opacity="0.9"/>
-                <stop offset="100%" stop-color="#0D0805" stop-opacity="1"/>
-            </linearGradient>
-        </defs>
-        <path d="M0,420 L0,290 L100,180 L200,240 L320,120 L440,200 L560,90 L680,165 L800,70 L920,155 L1040,85 L1160,160 L1280,110 L1380,190 L1440,210 L1440,420 Z" fill="url(#mG1)"/>
-        <path d="M0,420 L0,340 L160,240 L280,290 L400,200 L520,260 L640,175 L760,235 L880,165 L1000,225 L1120,185 L1240,250 L1360,200 L1440,265 L1440,420 Z" fill="url(#mG2)"/>
-        <path d="M800,70  L782,96  L818,96  Z"  fill="white" opacity="0.55"/>
-        <path d="M1040,85 L1025,107 L1055,107 Z" fill="white" opacity="0.40"/>
-        <path d="M320,120 L306,143 L334,143 Z"  fill="white" opacity="0.35"/>
-    </svg>
-
-    <div class="hero-content">
-        <div class="eyebrow">Mastering Studio · Wädenswil · Schweiz</div>
-        <h1>Wo dein Sound<br><em>zum Leben erwacht.</em></h1>
-        <p class="hero-sub">Schick mir deine Tracks — ich mixe und mastere sie auf echtem analogem Gear.<br>Kein Hochglanz-Digital. Echter Vintage-Sound aus Wädenswil.</p>
-        <div class="hero-cta">
-            <a href="#kontakt" class="btn btn-red">Kontakt aufnehmen</a>
-            <a href="#leistungen" class="btn btn-gold">Leistungen entdecken</a>
-        </div>
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-badge">Mastering Studio · Wädenswil ZH · Schweiz</div>
+    <h1>Deine Songs verdienen den <em>besten Sound</em></h1>
+    <p class="hero-tagline">
+      Professionelles Mastering, Recording und Musikproduktion –
+      mit über 30 Jahren Erfahrung und analogem Equipment das heute kaum noch zu finden ist.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#kontakt">Anfrage stellen</a>
+      <a class="btn btn-outline" href="#leistungen">Leistungen & Preise</a>
     </div>
-
-    <div class="hero-stats">
-        <div class="stat"><span class="stat-n">30+</span><span class="stat-l">Jahre Erfahrung</span></div>
-        <div class="stat"><span class="stat-n">CHF 75</span><span class="stat-l">ab / Song</span></div>
-        <div class="stat"><span class="stat-n">Remote</span><span class="stat-l">Tracks einfach einschicken</span></div>
-        <div class="stat"><span class="stat-n">Analog</span><span class="stat-l">Revox · Soundtracs</span></div>
-    </div>
-</section>
-
-<!-- ÜBER -->
-<section class="ueber" id="ueber">
-    <div class="inner">
-        <div class="two-col">
-            <div>
-                <div class="sec-eye">Das Studio</div>
-                <h2>Analoges Herz,<br><em>digitale Möglichkeiten</em></h2>
-                <div class="rule" style="margin:1.4rem 0;"></div>
-                <p>Das GigMixSound Tonstudio in Wädenswil ist kein Hochglanz-Studio mit digitalen Plug-in-Ketten. Hier arbeitet echtes analoges Gear: Soundtracs-Pult, Revox-Bandmaschine, handverlesene Outboard-Kompressoren.</p>
-                <p>Seit über 30 Jahren bringe ich Songs zum Klingen. Deine Tracks kommen digital rein — und gehen warm, lebendig und analog gemeistert raus. Perfekt für Musiker, die echten Sound wollen: Rockabilly, Schlager, Volksmusik, Blues.</p>
-                <div class="pullquote">„Qualität ist selbstverständlich. Wenn Schlechtes reinkommt, kommt Schlechtes raus."</div>
-                <p style="color:var(--muted);font-size:0.88rem;">— Marco Klamt, Inhaber &amp; Drummer</p>
-            </div>
-            <div>
-                <div class="tape-box" style="padding:0;overflow:hidden;">
-                    <img src="pics/console-closeup.jpg" alt="Soundtracs Topaz Mischpult – GigMixSound Studio Wädenswil"
-                         style="width:100%;display:block;opacity:0.9;filter:brightness(0.88) contrast(1.05);">
-                    <div style="padding:1.2rem 1.4rem; border-top:1px solid var(--border);">
-                        <div class="tape-stats">
-                            <div>
-                                <div class="tape-stat-n">24/48</div>
-                                <div class="tape-stat-l">Kanal Mischpult</div>
-                            </div>
-                            <div>
-                                <div class="tape-stat-n">3</div>
-                                <div class="tape-stat-l">Monitor-Systeme</div>
-                            </div>
-                            <div>
-                                <div class="tape-stat-n">2</div>
-                                <div class="tape-stat-l">Revox Bandmaschinen</div>
-                            </div>
-                            <div>
-                                <div class="tape-stat-n">Cubase</div>
-                                <div class="tape-stat-l">DAW</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
 <!-- LEISTUNGEN -->
 <section id="leistungen">
-    <div class="inner">
-        <div class="sec-hd">
-            <div class="sec-eye">Was wir bieten</div>
-            <h2>Unsere <em>Leistungen</em></h2>
-            <div class="rule"></div>
-        </div>
-        <div class="three-col">
-            <div class="card">
-                <span class="card-icon">🎚️</span>
-                <h3>Mixing</h3>
-                <p>Jeder Musiker schickt seinen Part — Gitarre, Bass, Drums, Vocals — und ich forme daraus einen stimmigen Gesamtsound. Analog, nicht digital zusammengepappt.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">🎛️</span>
-                <h3>Mastering</h3>
-                <p>Das analoge Finish für deinen fertigen Mix. Wärme, Druck und Tiefe, die kein Plug-in replizieren kann — durch echtes Outboard-Gear und die Revox-Bandmaschine.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">📬</span>
-                <h3>So funktioniert's</h3>
-                <p>Schick deine Dateien per E-Mail oder WeTransfer. Ich bearbeite sie analog in Wädenswil und liefere dir das Ergebnis als WAV oder IFF zurück. Kein Studio-Besuch nötig.</p>
-            </div>
-        </div>
-    </div>
-</section>
+  <div class="section-inner">
+    <p class="section-label">Leistungen & Preise</p>
+    <h2>Was ich für dich <span>tun kann</span></h2>
+    <div class="services-grid">
 
-<!-- PREISE -->
-<section class="preise" id="preise">
-    <div class="inner">
-        <div class="sec-hd">
-            <div class="sec-eye">Transparente Preise</div>
-            <h2>Was kostet <em>professioneller Sound?</em></h2>
-            <div class="rule"></div>
-        </div>
-        <div class="three-col">
-            <div class="pcard">
-                <div class="pname">Einzeltitel</div>
-                <div class="pamount">CHF 75<span> / Song</span></div>
-                <div class="pdesc">Mastering eines einzelnen Titels. Lieferung als IFF oder WAV.</div>
-            </div>
-            <div class="pcard hot">
-                <div class="pname">Album-Mastering</div>
-                <div class="pamount">CHF 300<span>–1'000</span></div>
-                <div class="pdesc">Komplett-Mastering eines Albums. Preis nach individuellem Aufwand und Absprache.</div>
-            </div>
-            <div class="pcard">
-                <div class="pname">Mixing</div>
-                <div class="pamount" style="font-size:1.8rem;">Anfrage</div>
-                <div class="pdesc">Mixing deiner Tracks — Preis nach Aufwand und Anzahl Spuren. Einfach anfragen.</div>
-            </div>
-        </div>
-        <p style="text-align:center;color:var(--muted);font-size:0.83rem;margin-top:2rem;">
-            Dateien bitte im Broadcast- oder Wave-Format einschicken (64 oder 32 Bit).<br>
-            Individuelle Absprachen immer möglich.
-        </p>
+      <div class="service-card">
+        <h3>Single Mastering</h3>
+        <p>Professionelles Mastering für Einzeltitel – optimiert für Streaming-Plattformen und physische Medien.</p>
+        <div class="price">CHF 75.– <span>pro Song</span></div>
+      </div>
+
+      <div class="service-card">
+        <h3>Album Mastering</h3>
+        <p>Vollständiges Album-Mastering mit konsistentem Sound über alle Tracks hinweg.</p>
+        <div class="price">CHF 300.– <span>bis 1.000.–</span></div>
+      </div>
+
+      <div class="service-card">
+        <h3>Recording</h3>
+        <p>Aufnahmen in analoger Qualität – mit Cubase und einem vollständig ausgerüsteten Studio.</p>
+        <div class="price" style="font-size:1rem; color: var(--gold);">Auf Anfrage</div>
+      </div>
+
+      <div class="service-card">
+        <h3>Musikproduktion</h3>
+        <p>Von der Idee bis zur fertigen Produktion – inklusive Streaming-Vertrieb auf allen Plattformen.</p>
+        <div class="price" style="font-size:1rem; color: var(--gold);">Auf Anfrage</div>
+      </div>
+
     </div>
+  </div>
 </section>
 
 <!-- EQUIPMENT -->
 <section id="equipment">
-    <div class="inner">
-        <div class="sec-hd">
-            <div class="sec-eye">Das Herzstück</div>
-            <h2>Analoges <em>Equipment</em></h2>
-            <div class="rule"></div>
+  <div class="section-inner">
+    <p class="section-label">Studio Equipment</p>
+    <h2>Analoges Herzstück, <span>digitale Präzision</span></h2>
+    <div class="equipment-list">
+
+      <div class="eq-item">
+        <span class="eq-icon">◈</span>
+        <div>
+          <strong>Soundtracs Topaz Project 8</strong>
+          <span>Analoges Mischpult, 24/48 Kanal</span>
         </div>
-        <div class="equip-grid">
-            <div class="egroup">
-                <h3>Mischpult &amp; Monitoring</h3>
-                <ul>
-                    <li>Soundtracs Topaz Project 8 Inline Mischpult 24/48 Channel</li>
-                    <li>Alesis mk2 aktive Monitore</li>
-                    <li>M Audio aktive Monitore</li>
-                    <li>Yamaha NS10 passive Monitore</li>
-                </ul>
-            </div>
-            <div class="egroup">
-                <h3>Vintage &amp; Analog</h3>
-                <ul>
-                    <li>Studer Revox A77 Bandmaschine (liebevoll restauriert)</li>
-                    <li>Revox C36 (Jg. 1958, in Revision)</li>
-                    <li>Alesis DAT Recorder (8-Spur)</li>
-                    <li>Pearl Drumset analog, voll mikrofoniert</li>
-                    <li>Roland TD 6V V-Drums</li>
-                </ul>
-            </div>
-            <div class="egroup">
-                <h3>Effekte &amp; Processing</h3>
-                <ul>
-                    <li>TC Helicon Voice Prism Plus</li>
-                    <li>Lexicon MX200 Reverb &amp; Delay</li>
-                    <li>1176 Compressor</li>
-                    <li>SSL Bus Compressor</li>
-                    <li>APHEX 104 Aural Exciter Type C2</li>
-                    <li>TC Electronics M350 Reverb &amp; Delay</li>
-                </ul>
-            </div>
-            <div class="egroup">
-                <h3>Interfaces &amp; DAW</h3>
-                <ul>
-                    <li>Steinberg Firewire Interface + Midas Mic Preamp</li>
-                    <li>MOTU Traveler Firewire Interface</li>
-                    <li>Cubase (DAW)</li>
-                    <li>E-mu Proteus/1 Multitimbral Sound Module</li>
-                    <li>Yamaha MU80 Midi Sound Module</li>
-                </ul>
-            </div>
+      </div>
+
+      <div class="eq-item">
+        <span class="eq-icon">◈</span>
+        <div>
+          <strong>Studer Revox A77</strong>
+          <span>Restaurierte Bandmaschine – Vintage Analog Sound</span>
         </div>
+      </div>
+
+      <div class="eq-item">
+        <span class="eq-icon">◈</span>
+        <div>
+          <strong>Revox C36 (1958)</strong>
+          <span>Historische Bandmaschine, in Revision</span>
+        </div>
+      </div>
+
+      <div class="eq-item">
+        <span class="eq-icon">◈</span>
+        <div>
+          <strong>Cubase DAW</strong>
+          <span>Professionelle Digital Audio Workstation</span>
+        </div>
+      </div>
+
+      <div class="eq-item">
+        <span class="eq-icon">◈</span>
+        <div>
+          <strong>Roland TD-6V V-Drums & Pearl Drumset</strong>
+          <span>Elektronisch und analog, voll mikrofoniert</span>
+        </div>
+      </div>
+
+      <div class="eq-item">
+        <span class="eq-icon">◈</span>
+        <div>
+          <strong>Alesis DAT Recorder (8-Spur)</strong>
+          <span>Professionelle Mehrspuraufnahme</span>
+        </div>
+      </div>
+
+      <div class="eq-item">
+        <span class="eq-icon">◈</span>
+        <div>
+          <strong>Outboard Processing</strong>
+          <span>TC Helicon · Lexicon · Behringer · ART · Steinberg · MOTU</span>
+        </div>
+      </div>
+
+      <div class="eq-item">
+        <span class="eq-icon">◈</span>
+        <div>
+          <strong>Monitore</strong>
+          <span>Alesis MK2 · M-Audio · Yamaha NS10</span>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<!-- FOTO-STRIP -->
-<section style="padding:0; background:var(--bg-dark);">
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px;">
-        <img src="pics/revox-tape.jpg" alt="Revox Bandmaschine" style="width:100%;height:260px;object-fit:cover;object-position:center;filter:brightness(0.75) sepia(0.2);">
-        <img src="pics/console-wide.jpg" alt="Studio Überblick" style="width:100%;height:260px;object-fit:cover;object-position:center top;filter:brightness(0.75) sepia(0.2);">
-        <img src="pics/drums-studio.jpg" alt="Schlagzeug GigMixSound" style="width:100%;height:260px;object-fit:cover;object-position:center;filter:brightness(0.75) sepia(0.2);">
-    </div>
-</section>
-
-<!-- REFERENZ -->
-<section class="ref-section" id="referenzen">
-    <div class="inner">
-        <div class="sec-hd">
-            <div class="sec-eye">Aktuelle Referenz</div>
-            <h2>Was unsere <em>Kunden sagen</em></h2>
-            <div class="rule"></div>
+<!-- ÜBER UNS -->
+<section id="ueber">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">Über das Studio</p>
+        <h2>30+ Jahre für <span>deinen Sound</span></h2>
+        <p>
+          Das GigMixSound Studio in Wädenswil steht für einen Sound, der aus echter Erfahrung kommt.
+          Ich kenne die Bedürfnisse von Musikern, weil ich selbst jahrzehntelang in Studios und
+          auf Bühnen gearbeitet habe.
+        </p>
+        <p>
+          Mein analoges Equipment – darunter restaurierte Bandmaschinen aus den 1950er und
+          70er Jahren – verleiht Aufnahmen eine Wärme, die rein digitale Produktionen oft vermissen lassen.
+          Gleichzeitig arbeite ich mit modernster DAW-Software, um das Beste aus beiden Welten zu vereinen.
+        </p>
+        <p>
+          Ob Singer-Songwriter, Band oder Produzent: Ich nehme mir Zeit für dein Projekt
+          und liefere Ergebnisse, die auf professionellen Streaming-Plattformen und
+          physischen Medien gleichermassen überzeugen.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-number">30+</span>
+          <span class="stat-label">Jahre Erfahrung</span>
         </div>
-        <div class="ref-card">
-            <blockquote>
-                „Mit GigMixSound haben wir unseren Sound gefunden. Vom rohen Track bis zum fertigen Master — Marco kennt die Bedürfnisse und liefert. Der Live-Mitschnitt aus dem Whiskey Museum San Sebastián klingt warm und lebendig, genau wie ein Jazz-Abend klingen soll."
-            </blockquote>
-            <div class="ref-meta">
-                <div>
-                    <div class="ref-name">Déjà Entendu Jazzband</div>
-                    <div class="ref-sub">Jazz Manouche · Wädenswil / San Sebastián</div>
-                </div>
-                <div class="sp-links">
-                    <a href="https://open.spotify.com/artist/51qrmIflZMWGL2t9K32uDy" class="sp" target="_blank">▶ Spotify</a>
-                    <a href="https://open.spotify.com/track/4q6MZcxLnPIPcN1KMle9c6" class="sp" target="_blank">Swing 42</a>
-                    <a href="https://open.spotify.com/track/34iKLvLJxFTcOVFBfs2N3w" class="sp" target="_blank">Caminar en La Playa</a>
-                    <a href="https://open.spotify.com/track/3LARHhcHSqwa4ikjv1nYr7" class="sp" target="_blank">Besame Mucho</a>
-                </div>
-            </div>
+        <div class="stat">
+          <span class="stat-number">CHF 75</span>
+          <span class="stat-label">Ab Mastering</span>
         </div>
+        <div class="stat">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Streaming-Plattformen</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Leidenschaft</span>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- KONTAKT -->
 <section id="kontakt">
-    <div class="inner">
-        <div class="sec-hd">
-            <div class="sec-eye">Jetzt anfragen</div>
-            <h2>Bereit für deinen <em>perfekten Sound?</em></h2>
-            <div class="rule"></div>
+  <div class="section-inner">
+    <p class="section-label">Kontakt</p>
+    <h2>Jetzt <span>Anfrage stellen</span></h2>
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h3>Erreichbarkeit</h3>
+
+        <div class="contact-detail">
+          <span class="icon">📍</span>
+          <div>
+            <span class="label">Adresse</span>
+            GigMixSound Studio<br>
+            Zugerstrasse 31<br>
+            CH-8820 Wädenswil ZH
+          </div>
         </div>
-        <div class="kontakt-grid">
-            <div class="kinfo">
-                <h3>Direkt Kontakt</h3>
-                <div class="krow">
-                    <div class="kicon">📍</div>
-                    <div class="ktxt">
-                        Mastering Studio GigMixSound<br>
-                        Zugerstrasse 31<br>
-                        CH-8820 Wädenswil ZH, Schweiz
-                    </div>
-                </div>
-                <div class="krow">
-                    <div class="kicon">📱</div>
-                    <div class="ktxt"><a href="tel:+41763168091">+41 76 316 80 91</a></div>
-                </div>
-                <div class="krow">
-                    <div class="kicon">✉️</div>
-                    <div class="ktxt"><a href="mailto:marco@gigmixsound.ch">marco@gigmixsound.ch</a></div>
-                </div>
-                <div class="krow">
-                    <div class="kicon">🕐</div>
-                    <div class="ktxt">
-                        Mo–Fr 08:00–18:00 Uhr<br>
-                        <span style="color:var(--muted)">Sa &amp; So geschlossen · oder nach Vereinbarung</span>
-                    </div>
-                </div>
-                <div class="social-row">
-                    <a href="https://www.facebook.com/klamt-marco-gigmixsound-tonstudio-189151297831739/" class="soc" target="_blank">Facebook</a>
-                    <a href="https://www.instagram.com/marcoklam1/" class="soc" target="_blank">Instagram</a>
-                    <a href="https://www.tiktok.com/@marcoklamt1" class="soc" target="_blank">TikTok</a>
-                </div>
-            </div>
-            <div>
-                <!-- Formspree action-URL nach Domain-Kauf eintragen -->
-                <form class="form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
-                    <div class="fg">
-                        <label>Name</label>
-                        <input type="text" name="name" placeholder="Dein Name" required>
-                    </div>
-                    <div class="fg">
-                        <label>E-Mail</label>
-                        <input type="email" name="email" placeholder="deine@email.ch" required>
-                    </div>
-                    <div class="fg">
-                        <label>Telefon (optional)</label>
-                        <input type="tel" name="phone" placeholder="+41 ...">
-                    </div>
-                    <div class="fg">
-                        <label>Deine Nachricht</label>
-                        <textarea name="message" placeholder="Was kann ich für dich tun? Schick mir ruhig auch dein Demo als Link..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-red" style="width:100%;text-align:center;">Nachricht senden</button>
-                </form>
-                <p class="form-note">Ich suche immer nach jungen Talenten — schick mir dein Demo, ich höre es mir an und melde mich.</p>
-            </div>
+
+        <div class="contact-detail">
+          <span class="icon">📞</span>
+          <div>
+            <span class="label">Telefon</span>
+            <a href="tel:+41763168091">+41 76 316 80 91</a>
+          </div>
         </div>
+
+        <div class="contact-detail">
+          <span class="icon">✉️</span>
+          <div>
+            <span class="label">E-Mail</span>
+            <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="icon">🕐</span>
+          <div>
+            <span class="label">Öffnungszeiten</span>
+            <div class="hours-grid">
+              <span class="day">Mo – Fr</span>
+              <span class="time">08:00 – 18:00</span>
+              <span class="day">Sa + So</span>
+              <span class="time">Geschlossen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Dein Name</label>
+            <input type="text" id="name" name="name" placeholder="Marco Muster" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Deine E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="deine@email.ch" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Leistung</label>
+            <select id="service" name="service">
+              <option value="">Bitte wählen…</option>
+              <option>Single Mastering (CHF 75.–)</option>
+              <option>Album Mastering (CHF 300.– – 1.000.–)</option>
+              <option>Recording</option>
+              <option>Musikproduktion</option>
+              <option>Sonstiges / Frage</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" placeholder="Kurze Beschreibung deines Projekts…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Anfrage absenden</button>
+        </form>
+      </div>
+
     </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="f-logo">GigMixSound</div>
-    <div class="f-sub">Mastering Studio · Wädenswil ZH · Schweiz</div>
-    <div class="f-ch">
-        <svg width="14" height="14" viewBox="0 0 14 14"><rect width="14" height="14" fill="#C8102E" rx="2"/><rect x="5.5" y="1.5" width="3" height="11" fill="white"/><rect x="1.5" y="5.5" width="11" height="3" fill="white"/></svg>
-        Made in Switzerland
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a>
     </div>
-    <div class="f-links">
-        © 2026 Marco Klamt · GigMixSound &nbsp;·&nbsp;
-        <a href="#">Impressum</a> &nbsp;·&nbsp;
-        <a href="#">Datenschutz</a>
-    </div>
-    <div style="margin-top:1rem; font-size:0.72rem; color:var(--muted);">
-        Erstellt mit ❤️ für Marco von Bodo aus Davao, Philippines &nbsp;·&nbsp;
-        <a href="https://bot-papa.online" target="_blank" style="color:var(--muted); text-decoration:none;" onmouseover="this.style.color='#C4942A'" onmouseout="this.style.color='#907860'">BOT PAPA</a>
-    </div>
+    <p>© 2026 GigMixSound Studio · Marco Klamt · Wädenswil ZH · Schweiz</p>
+  </div>
 </footer>
 
-<div class="alpine-bar"></div>
+<script>
+  // Mobile Nav
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Nav Links schliessen bei Klick
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const name    = document.getElementById('name').value;
+    const email   = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+
+    const subject = encodeURIComponent('Anfrage GigMixSound Studio – ' + (service || 'Allgemein'));
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'E-Mail: ' + email + '\n' +
+      'Leistung: ' + (service || '–') + '\n\n' +
+      message
+    );
+
+    window.location.href = 'mailto:studio@gigmixsound.online?subject=' + subject + '&body=' + body;
+  }
+
+  // Active Nav Highlight beim Scrollen
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+    });
+  });
+</script>
 
 </body>
 </html>
