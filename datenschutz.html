@@ -1,157 +1,116 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutzerklärung – GigMixSound Studio</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #0d0d0d;
-      color: #d4d4d4;
-      line-height: 1.8;
-      padding: 60px 20px;
-    }
-    .container { max-width: 760px; margin: 0 auto; }
-    h1 {
-      font-size: 2rem;
-      color: #e8c96e;
-      margin-bottom: 40px;
-      border-bottom: 1px solid #333;
-      padding-bottom: 16px;
-    }
-    h2 {
-      font-size: 1.1rem;
-      color: #e8c96e;
-      margin: 36px 0 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    p { margin-bottom: 10px; color: #b0b0b0; }
-    ul { margin: 8px 0 16px 20px; color: #b0b0b0; }
-    li { margin-bottom: 4px; }
-    a { color: #e8c96e; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .back {
-      display: inline-block;
-      margin-bottom: 40px;
-      color: #888;
-      font-size: 0.9rem;
-    }
-    .back:hover { color: #e8c96e; }
-    .highlight {
-      background: #1a1a1a;
-      border-left: 3px solid #e8c96e;
-      padding: 14px 18px;
-      margin: 20px 0;
-      font-size: 0.95rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz &ndash; GigMixSound Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg-dark:#0D0805;--bg-card:#1A1008;--bg-alt:#120C06;--swiss-red:#C8102E;--gold:#C4942A;--cream:#F0E4C4;--cream-muted:#C8B890;--text:#E8D9B0;--muted:#907860;--border:rgba(196,148,42,0.18);}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+        body{background:var(--bg-dark);color:var(--text);font-family:'Source Sans 3',sans-serif;font-weight:300;line-height:1.8;}
+        .alpine-bar{height:3px;background:linear-gradient(90deg,#3A6040 0%,var(--swiss-red) 50%,var(--gold) 100%);}
+        nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:rgba(13,8,5,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;}
+        .nav-logo{text-decoration:none;}
+        .nav-links{display:flex;gap:2rem;list-style:none;}
+        .nav-links a{color:var(--cream-muted);text-decoration:none;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;}
+        .nav-links a:hover{color:var(--gold);}
+        .swiss-cross{width:22px;height:22px;background:var(--swiss-red);border-radius:2px;position:relative;flex-shrink:0;}
+        .swiss-cross::before,.swiss-cross::after{content:'';position:absolute;background:white;}
+        .swiss-cross::before{width:38%;height:78%;top:11%;left:31%;}
+        .swiss-cross::after{width:78%;height:38%;top:31%;left:11%;}
+        .page-wrap{max-width:800px;margin:0 auto;padding:120px 2rem 5rem;}
+        h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--cream);margin-bottom:0.5rem;}
+        .rule{width:60px;height:2px;background:var(--swiss-red);margin:1.2rem 0 2.5rem;}
+        h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);margin:2rem 0 0.8rem;}
+        p{color:var(--text);margin-bottom:1rem;font-size:1rem;}
+        a{color:var(--gold);text-decoration:none;}
+        a:hover{text-decoration:underline;}
+        .back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--muted);font-size:0.85rem;margin-bottom:2rem;text-decoration:none;transition:color 0.3s;}
+        .back-link:hover{color:var(--gold);}
+        footer{background:#080503;border-top:1px solid var(--border);padding:2rem;text-align:center;margin-top:4rem;}
+        .f-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:0.4rem;}
+        .f-sub{color:var(--muted);font-size:0.83rem;}
+        .f-ch{display:inline-flex;align-items:center;gap:0.45rem;color:var(--swiss-red);font-size:0.78rem;margin-top:0.5rem;}
+        .f-links{margin-top:0.9rem;color:var(--muted);font-size:0.73rem;}
+        .f-links a{color:var(--muted);text-decoration:none;margin:0 0.5rem;}
+        .f-links a:hover{color:var(--gold);}
+        @media(max-width:680px){.nav-links{display:none;}.page-wrap{padding:100px 1.2rem 3rem;}}
+    </style>
 </head>
 <body>
-  <div class="container">
-    <a class="back" href="index.html">← Zurück zur Startseite</a>
+<div class="alpine-bar"></div>
+<nav>
+    <a href="index.html" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;">
+        <svg viewBox="0 0 220 38" xmlns="http://www.w3.org/2000/svg" height="38" style="display:block;">
+            <circle cx="19" cy="19" r="17" fill="#150E08"/>
+            <circle cx="19" cy="19" r="17" fill="none" stroke="#C4942A" stroke-width="1.5"/>
+            <circle cx="19" cy="8.5" r="4.2" fill="#0D0805"/>
+            <circle cx="27.7" cy="23" r="4.2" fill="#0D0805"/>
+            <circle cx="10.3" cy="23" r="4.2" fill="#0D0805"/>
+            <circle cx="19" cy="19" r="5.8" fill="#C4942A"/>
+            <circle cx="19" cy="19" r="2.4" fill="#0D0805"/>
+            <path d="M36,19 Q40,14 44,19" fill="none" stroke="#C4942A" stroke-width="1.5" opacity="0.55"/>
+            <text font-family="'Playfair Display', Georgia, serif" font-size="15.5" font-weight="400">
+                <tspan x="46" y="22" fill="#F0E4C4">Gig</tspan><tspan fill="#C8102E">Mix</tspan><tspan fill="#F0E4C4">Sound</tspan>
+            </text>
+            <text x="46" y="33" font-family="'Source Sans 3', Arial, sans-serif" font-size="5.5" fill="#C4942A" letter-spacing="3.5">ANALOG STUDIO &middot; CH</text>
+        </svg>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html#leistungen">Leistungen</a></li>
+        <li><a href="index.html#preise">Preise</a></li>
+        <li><a href="index.html#equipment">Equipment</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="swiss-cross"></div>
+</nav>
+<div class="page-wrap">
+    <a href="index.html" class="back-link">&#8592; Zur&uuml;ck zur Startseite</a>
+    <h1>Datenschutzerkl&auml;rung</h1>
+    <div class="rule"></div>
 
-    <h1>Datenschutzerklärung</h1>
+    <h2>Verantwortliche Stelle</h2>
+    <p>GigMixSound Studio, Marco Klamt, Zugerstrasse 31, CH-8820 W&auml;denswil ZH<br>
+    E-Mail: <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a></p>
 
-    <div class="highlight">
-      Diese Datenschutzerklärung gilt für die Website <strong>gigmixsound.online</strong> und
-      richtet sich nach dem Schweizer Bundesgesetz über den Datenschutz
-      (<strong>DSG</strong>, revidierte Fassung, in Kraft seit 1. September 2023).
+    <h2>Hosting</h2>
+    <p>Diese Website wird &uuml;ber Cloudflare Pages gehostet (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA). Cloudflare verarbeitet technische Verbindungsdaten gem&auml;ss seiner <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Datenschutzrichtlinie</a>.</p>
+
+    <h2>Erhobene Daten</h2>
+    <p>Beim Besuch dieser Website werden keine Tracking-Cookies gesetzt und keine Analyse-Tools eingesetzt. Es werden keine personenbezogenen Daten ohne Ihr Zutun gespeichert.</p>
+
+    <h2>Kontaktformular</h2>
+    <p>Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben (Name, E-Mail, Nachricht) per E-Mail direkt an studio@gigmixsound.online &uuml;bermittelt. Es erfolgt keine Speicherung in einer Datenbank.</p>
+
+    <h2>E-Mail-Kommunikation</h2>
+    <p>E-Mails werden &uuml;ber Titan Email verarbeitet. Ihre Daten werden nur zur Beantwortung Ihrer Anfrage verwendet.</p>
+
+    <h2>Ihre Rechte (nDSG)</h2>
+    <p>Gem&auml;ss Schweizer Datenschutzgesetz (nDSG) haben Sie das Recht auf Auskunft, Berichtigung, L&ouml;schung und Einschr&auml;nkung der Bearbeitung Ihrer Personendaten. Anfragen richten Sie bitte an: <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a></p>
+
+    <h2>&Auml;nderungen</h2>
+    <p>Diese Datenschutzerkl&auml;rung kann jederzeit angepasst werden. Es gilt die jeweils aktuelle Version auf dieser Website. Stand: Juni 2026.</p>
+</div>
+<footer>
+    <div class="f-logo">GigMixSound</div>
+    <div class="f-sub">Mastering Studio &middot; W&auml;denswil ZH &middot; Schweiz</div>
+    <div class="f-ch">
+        <svg width="14" height="14" viewBox="0 0 14 14"><rect width="14" height="14" fill="#C8102E" rx="2"/><rect x="5.5" y="1.5" width="3" height="11" fill="white"/><rect x="1.5" y="5.5" width="11" height="3" fill="white"/></svg>
+        Made in Switzerland
     </div>
-
-    <h2>1. Verantwortliche Person</h2>
-    <p>
-      Verantwortlich für die Bearbeitung von Personendaten auf dieser Website ist:<br><br>
-      Marco Klamt<br>
-      GigMixSound Studio<br>
-      Zugerstrasse 31<br>
-      CH-8820 Wädenswil, Schweiz<br>
-      E-Mail: <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a>
-    </p>
-
-    <h2>2. Erhebung und Bearbeitung von Personendaten</h2>
-    <p>
-      Wir erheben nur jene Personendaten, die für den Betrieb dieser Website und die
-      Erbringung unserer Dienstleistungen notwendig sind. Dazu zählen insbesondere:
-    </p>
-    <ul>
-      <li>Angaben, die Sie uns freiwillig über das Kontaktformular mitteilen (Name, E-Mail, Nachricht)</li>
-      <li>Technische Daten (IP-Adresse, Browser-Typ, Zugriffszeitpunkt) durch den Webserver</li>
-    </ul>
-    <p>
-      Eine Weitergabe Ihrer Daten an Dritte erfolgt nicht, ausser dies ist zur Erfüllung
-      eines Vertrags notwendig oder gesetzlich vorgeschrieben.
-    </p>
-
-    <h2>3. Zweck der Datenbearbeitung</h2>
-    <p>Ihre Daten werden ausschliesslich für folgende Zwecke verwendet:</p>
-    <ul>
-      <li>Beantwortung von Anfragen über das Kontaktformular</li>
-      <li>Anbahnung und Abwicklung von Aufträgen (Mastering, Recording, Musikproduktion)</li>
-      <li>Technischer Betrieb und Sicherheit der Website</li>
-    </ul>
-
-    <h2>4. Hosting und Infrastruktur</h2>
-    <p>
-      Diese Website wird über <strong>Cloudflare Pages</strong> (Cloudflare, Inc., USA) gehostet.
-      Cloudflare verarbeitet technische Verbindungsdaten gemäss ihren eigenen Datenschutzbestimmungen.
-      Weitere Informationen: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">cloudflare.com/privacypolicy</a>
-    </p>
-    <p>
-      E-Mails werden über <strong>Titan Email</strong> (Flock, Inc.) verarbeitet.
-      Weitere Informationen: <a href="https://titan.email/privacy-policy" target="_blank">titan.email/privacy-policy</a>
-    </p>
-
-    <h2>5. Cookies</h2>
-    <p>
-      Diese Website verwendet keine eigenen Tracking-Cookies. Cloudflare kann technisch
-      notwendige Cookies zur Sicherstellung des Betriebs setzen (z. B. DDoS-Schutz).
-      Diese dienen nicht der Werbung oder Nutzeranalyse.
-    </p>
-
-    <h2>6. Keine Analysetools</h2>
-    <p>
-      Auf dieser Website werden keine Analyse- oder Trackingdienste (wie Google Analytics,
-      Meta Pixel o.ä.) eingesetzt.
-    </p>
-
-    <h2>7. Speicherdauer</h2>
-    <p>
-      Personendaten werden nur so lange gespeichert, wie es für den jeweiligen Zweck
-      erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
-    </p>
-
-    <h2>8. Ihre Rechte</h2>
-    <p>
-      Gemäss dem revidierten Schweizer Datenschutzgesetz (DSG) haben Sie folgende Rechte:
-    </p>
-    <ul>
-      <li><strong>Auskunft:</strong> Sie können Auskunft über die bei uns gespeicherten Daten verlangen.</li>
-      <li><strong>Berichtigung:</strong> Sie können die Berichtigung unrichtiger Daten verlangen.</li>
-      <li><strong>Löschung:</strong> Sie können die Löschung Ihrer Daten verlangen, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
-      <li><strong>Herausgabe/Übertragung:</strong> Sie können die Herausgabe Ihrer Daten in einem gängigen Format verlangen.</li>
-    </ul>
-    <p>
-      Für die Ausübung Ihrer Rechte wenden Sie sich bitte an:
-      <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a>
-    </p>
-
-    <h2>9. Datensicherheit</h2>
-    <p>
-      Wir treffen angemessene technische und organisatorische Massnahmen zum Schutz Ihrer
-      Personendaten gegen unbefugten Zugriff, Verlust oder Missbrauch. Die Datenübertragung
-      erfolgt verschlüsselt über HTTPS (SSL/TLS).
-    </p>
-
-    <h2>10. Änderungen dieser Datenschutzerklärung</h2>
-    <p>
-      Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Die jeweils
-      aktuelle Version ist auf dieser Website abrufbar.
-    </p>
-
-    <p style="margin-top:48px; font-size:0.85rem; color:#555;">Stand: Juni 2026 · Grundlage: Schweizer DSG (revidiert, in Kraft seit 01.09.2023)</p>
-  </div>
+    <div class="f-links">
+        &copy; 2026 Marco Klamt &middot; GigMixSound &nbsp;&middot;&nbsp;
+        <a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp;
+        <a href="datenschutz.html">Datenschutz</a> &nbsp;&middot;&nbsp;
+        <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a>
+    </div>
+    <div style="margin-top:1rem;font-size:0.72rem;color:var(--muted);">
+        Erstellt mit &#10084;&#65039; f&uuml;r Marco von Bodo aus Davao, Philippines &nbsp;&middot;&nbsp;
+        <a href="https://bot-papa.online" target="_blank" style="color:var(--muted);text-decoration:none;">BOT PAPA</a>
+    </div>
+</footer>
+<div class="alpine-bar"></div>
 </body>
 </html>
