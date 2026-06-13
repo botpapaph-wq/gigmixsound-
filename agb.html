@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGB &ndash; GigMixSound Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg-dark:#0D0805;--bg-card:#1A1008;--bg-alt:#120C06;--swiss-red:#C8102E;--gold:#C4942A;--cream:#F0E4C4;--cream-muted:#C8B890;--text:#E8D9B0;--muted:#907860;--border:rgba(196,148,42,0.18);}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+        body{background:var(--bg-dark);color:var(--text);font-family:'Source Sans 3',sans-serif;font-weight:300;line-height:1.8;}
+        .alpine-bar{height:3px;background:linear-gradient(90deg,#3A6040 0%,var(--swiss-red) 50%,var(--gold) 100%);}
+        nav{position:fixed;top:3px;left:0;right:0;z-index:100;background:rgba(13,8,5,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;}
+        .nav-logo{text-decoration:none;}
+        .nav-links{display:flex;gap:2rem;list-style:none;}
+        .nav-links a{color:var(--cream-muted);text-decoration:none;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;}
+        .nav-links a:hover{color:var(--gold);}
+        .swiss-cross{width:22px;height:22px;background:var(--swiss-red);border-radius:2px;position:relative;flex-shrink:0;}
+        .swiss-cross::before,.swiss-cross::after{content:'';position:absolute;background:white;}
+        .swiss-cross::before{width:38%;height:78%;top:11%;left:31%;}
+        .swiss-cross::after{width:78%;height:38%;top:31%;left:11%;}
+        .page-wrap{max-width:800px;margin:0 auto;padding:120px 2rem 5rem;}
+        h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--cream);margin-bottom:0.5rem;}
+        .rule{width:60px;height:2px;background:var(--swiss-red);margin:1.2rem 0 2.5rem;}
+        h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);margin:2rem 0 0.8rem;}
+        p{color:var(--text);margin-bottom:1rem;font-size:1rem;}
+        ol,ul{padding-left:1.4rem;margin-bottom:1rem;}
+        li{color:var(--text);font-size:1rem;margin-bottom:0.4rem;}
+        a{color:var(--gold);text-decoration:none;}
+        a:hover{text-decoration:underline;}
+        .back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--muted);font-size:0.85rem;margin-bottom:2rem;text-decoration:none;transition:color 0.3s;}
+        .back-link:hover{color:var(--gold);}
+        footer{background:#080503;border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;margin-top:4rem;}
+        .f-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);margin-bottom:0.5rem;}
+        .f-sub{color:var(--muted);font-size:0.95rem;}
+        .f-ch{display:inline-flex;align-items:center;gap:0.45rem;color:var(--swiss-red);font-size:0.88rem;margin-top:0.6rem;}
+        .f-links{margin-top:1rem;color:var(--muted);font-size:0.88rem;}
+        .f-links a{color:var(--muted);text-decoration:none;margin:0 0.5rem;}
+        .f-links a:hover{color:var(--gold);}
+        @media(max-width:680px){.nav-links{display:none;}.page-wrap{padding:100px 1.2rem 3rem;}}
+    </style>
+</head>
+<body>
+<div class="alpine-bar"></div>
+<nav>
+    <a href="index.html" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;">
+        <svg viewBox="0 0 220 38" xmlns="http://www.w3.org/2000/svg" height="54" style="display:block;">
+            <circle cx="19" cy="19" r="17" fill="#150E08"/>
+            <circle cx="19" cy="19" r="17" fill="none" stroke="#C4942A" stroke-width="1.5"/>
+            <circle cx="19" cy="8.5" r="4.2" fill="#0D0805"/>
+            <circle cx="27.7" cy="23" r="4.2" fill="#0D0805"/>
+            <circle cx="10.3" cy="23" r="4.2" fill="#0D0805"/>
+            <circle cx="19" cy="19" r="5.8" fill="#C4942A"/>
+            <circle cx="19" cy="19" r="2.4" fill="#0D0805"/>
+            <path d="M36,19 Q40,14 44,19" fill="none" stroke="#C4942A" stroke-width="1.5" opacity="0.55"/>
+            <text font-family="'Playfair Display', Georgia, serif" font-size="15.5" font-weight="400">
+                <tspan x="46" y="22" fill="#F0E4C4">Gig</tspan><tspan fill="#C8102E">Mix</tspan><tspan fill="#F0E4C4">Sound</tspan>
+            </text>
+            <text x="46" y="34" font-family="'Source Sans 3', Arial, sans-serif" font-size="7.5" fill="#D4A84A" letter-spacing="3">ANALOG STUDIO &middot; CH</text>
+        </svg>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html#leistungen">Leistungen</a></li>
+        <li><a href="index.html#preise">Preise</a></li>
+        <li><a href="index.html#equipment">Equipment</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="swiss-cross"></div>
+</nav>
+
+<div class="page-wrap">
+    <a href="index.html" class="back-link">&#8592; Zur&uuml;ck zur Startseite</a>
+    <h1>Allgemeine Gesch&auml;ftsbedingungen</h1>
+    <div class="rule"></div>
+
+    <h2>1. Geltungsbereich</h2>
+    <p>Diese Allgemeinen Gesch&auml;ftsbedingungen (AGB) gelten f&uuml;r alle Auftr&auml;ge und Dienstleistungen von GigMixSound Studio, Marco Klamt, Zugerstrasse 31, CH-8820 W&auml;denswil ZH (nachfolgend &laquo;Studio&raquo;). Mit der Auftragserteilung akzeptiert der Auftraggeber diese AGB.</p>
+
+    <h2>2. Leistungen</h2>
+    <p>Das Studio bietet folgende Dienstleistungen an:</p>
+    <ul>
+        <li>Mastering (Stereo &amp; Stem)</li>
+        <li>Mixing</li>
+        <li>Remote-Produktion &amp; Arrangement</li>
+        <li>Weitere vereinbarte Studio-Dienstleistungen</li>
+    </ul>
+    <p>Der genaue Leistungsumfang wird vor Auftragsbeginn schriftlich per E-Mail vereinbart.</p>
+
+    <h2>3. Auftragserteilung &amp; Ablauf</h2>
+    <p>Ein Auftrag gilt als erteilt, wenn der Auftraggeber per E-Mail oder schriftlich best&auml;tigt. Das Studio beginnt nach Eingang der Best&auml;tigung mit den Arbeiten. Dateien werden ausschliesslich digital &uuml;bermittelt (WeTransfer, Dropbox oder vergleichbar).</p>
+
+    <h2>4. Preise &amp; Zahlung</h2>
+    <p>Die aktuellen Preise sind auf der Website einsehbar. Alle Preise verstehen sich in Schweizer Franken (CHF) inkl. allfälliger Steuern. Die Rechnung wird nach Lieferung der fertigen Dateien gestellt. Zahlung ist innert 14 Tagen f&auml;llig. Bei Verzug beh&auml;lt sich das Studio vor, eine Mahngebühr zu erheben.</p>
+
+    <h2>5. Korrekturen &amp; Revisionen</h2>
+    <p>Im Preis inbegriffen sind bis zu zwei Revisionsrunden. Weitere Korrekturrunden werden nach Aufwand in Rechnung gestellt. Der Auftraggeber hat die gelieferten Dateien innert 7 Tagen zu pr&uuml;fen und R&uuml;ckmeldung zu geben. Danach gilt der Auftrag als abgenommen.</p>
+
+    <h2>6. Urheberrecht &amp; Nutzungsrechte</h2>
+    <p>Das Studio &uuml;bertr&auml;gt dem Auftraggeber nach vollst&auml;ndiger Bezahlung das einfache Nutzungsrecht an den gelieferten Dateien f&uuml;r kommerzielle und nicht-kommerzielle Zwecke. Das Studio beh&auml;lt das Recht, die Zusammenarbeit in seinem Portfolio und auf sozialen Medien zu erw&auml;hnen, sofern der Auftraggeber nicht ausdr&uuml;cklich widerspricht.</p>
+    <p>Das vom Auftraggeber gelieferte Ausgangsmaterial (Rohtracks, Stems) bleibt Eigentum des Auftraggebers.</p>
+
+    <h2>7. Vertraulichkeit</h2>
+    <p>Das Studio behandelt alle &uuml;bermittelten Materialien und Projektinformationen vertraulich und gibt diese nicht an Dritte weiter.</p>
+
+    <h2>8. Haftung</h2>
+    <p>Das Studio haftet nicht f&uuml;r Sch&auml;den, die durch fehlerhafte oder unvollst&auml;ndige Ausgangsdateien des Auftraggebers entstehen. Bei technischen Problemen (Datenverlust, Hardwareausfall) ist die Haftung auf den Auftragswert beschr&auml;nkt. Das Studio empfiehlt dem Auftraggeber, stets Sicherungskopien der Originaldateien zu behalten.</p>
+
+    <h2>9. Stornierung</h2>
+    <p>Stornierungen sind bis 48 Stunden vor Auftragsbeginn kostenfrei m&ouml;glich. Bei sp&auml;terer Stornierung oder nach Beginn der Arbeiten werden 50% des vereinbarten Honorars in Rechnung gestellt. Bei vollst&auml;ndig abgeschlossenen Arbeiten ist der volle Betrag f&auml;llig.</p>
+
+    <h2>10. Anwendbares Recht &amp; Gerichtsstand</h2>
+    <p>Es gilt Schweizer Recht. Ausschliesslicher Gerichtsstand f&uuml;r alle Streitigkeiten ist W&auml;denswil ZH, Schweiz.</p>
+
+    <h2>11. &Auml;nderungen der AGB</h2>
+    <p>Das Studio beh&auml;lt sich vor, diese AGB jederzeit anzupassen. Es gilt die zum Zeitpunkt der Auftragserteilung g&uuml;ltige Version. Stand: Juni 2026.</p>
+
+    <p style="margin-top:2rem;color:var(--muted);font-size:0.9rem;">Bei Fragen: <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a></p>
+</div>
+
+<footer>
+    <div class="f-logo">GigMixSound</div>
+    <div class="f-sub">Mastering Studio &middot; W&auml;denswil ZH &middot; Schweiz</div>
+    <div class="f-ch">
+        <svg width="14" height="14" viewBox="0 0 14 14"><rect width="14" height="14" fill="#C8102E" rx="2"/><rect x="5.5" y="1.5" width="3" height="11" fill="white"/><rect x="1.5" y="5.5" width="11" height="3" fill="white"/></svg>
+        Made in Switzerland
+    </div>
+    <div class="f-links">
+        &copy; 2026 Marco Klamt &middot; GigMixSound &nbsp;&middot;&nbsp;
+        <a href="impressum.html">Impressum</a> &nbsp;&middot;&nbsp;
+        <a href="datenschutz.html">Datenschutz</a> &nbsp;&middot;&nbsp;
+        <a href="agb.html">AGB</a> &nbsp;&middot;&nbsp;
+        <a href="mailto:studio@gigmixsound.online">studio@gigmixsound.online</a>
+    </div>
+    <div style="margin-top:1rem;font-size:0.83rem;color:var(--muted);">
+        Erstellt mit &#10084;&#65039; f&uuml;r Marco von Bodo aus Davao, Philippines &nbsp;&middot;&nbsp;
+        <a href="https://bot-papa.online" target="_blank" style="color:var(--muted);text-decoration:none;">BOT PAPA</a>
+    </div>
+</footer>
+<div class="alpine-bar"></div>
+</body>
+</html>
