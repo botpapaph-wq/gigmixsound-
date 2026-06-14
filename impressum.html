@@ -37,9 +37,57 @@
         .f-links a{color:var(--muted);text-decoration:none;margin:0 0.5rem;}
         .f-links a:hover{color:var(--gold);}
         @media(max-width:680px){.nav-links{display:none;}.page-wrap{padding:100px 1.2rem 3rem;}}
+
+    /* ── Cookie Banner ── */
+    #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1A1008;border-top:2px solid rgba(196,148,42,0.4);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.5);}
+    #cookie-banner p{margin:0;font-size:0.9rem;color:#C8B890;flex:1;min-width:200px;}
+    #cookie-banner a{color:#C4942A;}
+    .cb-btns{display:flex;gap:0.7rem;flex-shrink:0;}
+    .cb-accept{background:#C4942A;color:#0D0805;border:none;padding:0.55rem 1.4rem;border-radius:4px;font-size:0.9rem;font-weight:700;cursor:pointer;}
+    .cb-decline{background:transparent;color:#907860;border:1px solid rgba(144,120,96,0.4);padding:0.55rem 1.2rem;border-radius:4px;font-size:0.9rem;cursor:pointer;}
+    .cb-accept:hover{background:#D4A84A;}.cb-decline:hover{color:#C8B890;}
     </style>
+<!-- Google Analytics (nur nach Zustimmung) -->
+<script>
+  var GA_ID='G-ZSQG2TKNLY';
+  function loadGA(){
+    if(window._gaLoaded)return;
+    window._gaLoaded=true;
+    var s=document.createElement('script');s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
+    gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true});
+  }
+  function cookieAccept(){
+    localStorage.setItem('cookieConsent','accepted');
+    document.getElementById('cookie-banner').style.display='none';
+    loadGA();
+  }
+  function cookieDecline(){
+    localStorage.setItem('cookieConsent','declined');
+    document.getElementById('cookie-banner').style.display='none';
+  }
+  (function(){
+    var c=localStorage.getItem('cookieConsent');
+    if(c==='accepted')loadGA();
+    else if(!c)document.addEventListener('DOMContentLoaded',function(){
+      document.getElementById('cookie-banner').style.display='flex';
+    });
+  })();
+</script>
 </head>
 <body>
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="display:none;">
+  <p>Wir verwenden Google Analytics zur Messung der Website-Performance. Keine Weitergabe an Dritte.
+     <a href="datenschutz.html">Datenschutz</a></p>
+  <div class="cb-btns">
+    <button class="cb-decline" onclick="cookieDecline()">Ablehnen</button>
+    <button class="cb-accept" onclick="cookieAccept()">Akzeptieren</button>
+  </div>
+</div>
 <div class="alpine-bar"></div>
 <nav>
     <a href="index.html" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;">
